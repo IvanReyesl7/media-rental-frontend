@@ -1,3 +1,12 @@
+export interface Media {
+  id: number
+  name: string
+  type: string
+  location: string
+  dimensions: string
+  price_per_day: number
+  status: 'active' | 'inactive'
+}
 
 export interface Customer {
   id: number
@@ -18,20 +27,7 @@ export interface Booking {
   customer?: Customer
 }
 
-export interface Media {
-  id: number
-  name: string
-  type: string
-  location: string
-  dimensions: string
-  price_per_day: number | string
-  status: 'active' | 'inactive'
-}
-
 export interface Paginated<T> {
   data: T[]
-  current_page: number
-  last_page: number
-  per_page: number
-  total: number
+  meta: { current_page: number; last_page: number; per_page: number; total: number }
 }
