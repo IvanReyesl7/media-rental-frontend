@@ -114,9 +114,9 @@ const money = (value: number | string) =>
       </template>
     </UTable>
 
-    <div v-if="data && data.total > perPage" class="flex items-center justify-between">
-      <p class="text-sm text-muted">{{ data.total }} medios en total</p>
-      <UPagination v-model:page="page" :items-per-page="perPage" :total="data.total" />
+    <div v-if="data && data.meta.total > perPage" class="flex items-center justify-between">
+      <p class="text-sm text-muted">{{ data.meta.total }} medios en total</p>
+      <UPagination v-model:page="page" :items-per-page="perPage" :total="data.meta.total" />
     </div>
   </div>
 </template>
